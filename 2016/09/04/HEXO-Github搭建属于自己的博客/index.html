@@ -14,14 +14,14 @@
 <meta property="og:site_name" content="谢绍宁">
 <meta property="og:description" content="经过各种找资料，踩过何种坑，终于搭建好了hexo，域名目前用得时github的，我的hexo是3.2.2版本，hexo不同的版本，很多配置都不一样。
 为了做一个合格的程序员，这几天我也尝试搭建自己的博客。很自然的选择github来搭建，因为免费嘛，对大多数人来说应该是入门博客最好的选择了。搭博客自然有样式选择，在网上搜索后，发现很多人都是选择Hexo框架来搭建的。网上参考潘柏信同学的博客教程（原文">
-<meta property="og:image" content="https://linson0812.github.io/img/error1.jpg">
-<meta property="og:image" content="https://linson0812.github.io/img/error2.jpg">
-<meta property="og:updated_time" content="2016-09-04T06:23:52.158Z">
+<meta property="og:image" content="https://linson0812.github.io/img/20160904/error1.jpg">
+<meta property="og:image" content="https://linson0812.github.io/img/20160904/error2.jpg">
+<meta property="og:updated_time" content="2016-09-04T06:29:21.671Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HEXO+Github搭建属于自己的博客">
 <meta name="twitter:description" content="经过各种找资料，踩过何种坑，终于搭建好了hexo，域名目前用得时github的，我的hexo是3.2.2版本，hexo不同的版本，很多配置都不一样。
 为了做一个合格的程序员，这几天我也尝试搭建自己的博客。很自然的选择github来搭建，因为免费嘛，对大多数人来说应该是入门博客最好的选择了。搭博客自然有样式选择，在网上搜索后，发现很多人都是选择Hexo框架来搭建的。网上参考潘柏信同学的博客教程（原文">
-<meta name="twitter:image" content="https://linson0812.github.io/img/error1.jpg">
+<meta name="twitter:image" content="https://linson0812.github.io/img/20160904/error1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="谢绍宁" type="application/atom+xml">
   
@@ -84,7 +84,7 @@
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -237,7 +237,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>经过各种找资料，踩过何种坑，终于搭建好了hexo，域名目前用得时github的，我的hexo是3.2.2版本，hexo不同的版本，很多配置都不一样。</p>
-<p>为了做一个合格的程序员，这几天我也尝试搭建自己的博客。很自然的选择github来搭建，因为免费嘛，对大多数人来说应该是入门博客最好的选择了。<br>搭博客自然有样式选择，在网上搜索后，发现很多人都是选择<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>框架来搭建的。<br>网上参考潘柏信同学的博客教程（原文地址<a href="http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/）开始搭建自己的博客。安装好相应的环境（在安装nodejs的时候按照博主的方法进行安装安装失败了，后来下载安装包直接安装了，这里就不细说了），输入命令hexo" target="_blank" rel="external">http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/）开始搭建自己的博客。安装好相应的环境（在安装nodejs的时候按照博主的方法进行安装安装失败了，后来下载安装包直接安装了，这里就不细说了），输入命令hexo</a> server后，浏览器访问<a href="http://localhost:4000后能看到博客页面，有些小小激动。接下来就是要将hexo主题内容提交到自己的github上面，这一步就被坑惨了，出现各种奇奇怪怪的问题，搞了好久之后才搞好。" target="_blank" rel="external">http://localhost:4000后能看到博客页面，有些小小激动。接下来就是要将hexo主题内容提交到自己的github上面，这一步就被坑惨了，出现各种奇奇怪怪的问题，搞了好久之后才搞好。</a><br>首先在cmd中执行<code>hexo d</code>命令，将hexo主题发布到github是报错，如下图：<br><img src="https://linson0812.github.io/img/error1.jpg" alt="cmd hexo d命令报错信息"><br>可以看到，报了个FATAL spawn Enoent的错误，提交报错，所以猜测是hexo-deployer-git插件的问题，所以尝试到到该github上面是看看有没有人遇到这样的问题，果然有这个<a href="https://github.com/hexojs/hexo-deployer-git/issues/13" target="_blank" rel="external">issue</a>，回答说的很清楚，我安装了github for windows但是也安装了git，但是在cmd窗口中执行git命令确提示没有该命令，然后我发现有个git cmd的工具，于是尝试在这个窗口里面去执行deploy命令，执行后还是报错了，单这次报的错和之前完全不一样了，错误如下图：<br><img src="https://linson0812.github.io/img/error2.jpg" alt="could not read username"><br>报的是could not read username for ‘<a href="https://github.com&#39;:no" target="_blank" rel="external">https://github.com&#39;:no</a> error的错误，网上直接搜索这个错误，讨论有很多啊，有的说将https的方式换成ssh的方式（试过，报的另外一个错），后来看到一个回答说将url的结构改一下，抱着试一试的态度尝试了一下，居然成功了！阿西吧，不容易啊。然后这里有个小小的思考，<a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">hexo git deployer说明</a>的repository url说的应该就是github上直接copy下来的repository url啊，具体原因有待考究。<br>这样，hexo+github搭建的博客就算起来啦，有些简陋，但也算是有个小屋啦，后面再慢慢完善吧。<br>刚开始写博客，写的不好的地方还请谅解。转载请注明原地址：谢绍宁的博客<a href="https://linson0812.github.io" target="_blank" rel="external">https://linson0812.github.io</a> 谢谢！</p>
+<p>为了做一个合格的程序员，这几天我也尝试搭建自己的博客。很自然的选择github来搭建，因为免费嘛，对大多数人来说应该是入门博客最好的选择了。<br>搭博客自然有样式选择，在网上搜索后，发现很多人都是选择<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>框架来搭建的。<br>网上参考潘柏信同学的博客教程（原文地址<a href="http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/）开始搭建自己的博客。安装好相应的环境（在安装nodejs的时候按照博主的方法进行安装安装失败了，后来下载安装包直接安装了，这里就不细说了），输入命令hexo" target="_blank" rel="external">http://baixin.io/2015/08/HEXO%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/）开始搭建自己的博客。安装好相应的环境（在安装nodejs的时候按照博主的方法进行安装安装失败了，后来下载安装包直接安装了，这里就不细说了），输入命令hexo</a> server后，浏览器访问<a href="http://localhost:4000后能看到博客页面，有些小小激动。接下来就是要将hexo主题内容提交到自己的github上面，这一步就被坑惨了，出现各种奇奇怪怪的问题，搞了好久之后才搞好。" target="_blank" rel="external">http://localhost:4000后能看到博客页面，有些小小激动。接下来就是要将hexo主题内容提交到自己的github上面，这一步就被坑惨了，出现各种奇奇怪怪的问题，搞了好久之后才搞好。</a><br>首先在cmd中执行<code>hexo d</code>命令，将hexo主题发布到github是报错，如下图：<br><img src="https://linson0812.github.io/img/20160904/error1.jpg" alt="cmd hexo d命令报错信息"><br>可以看到，报了个FATAL spawn Enoent的错误，提交报错，所以猜测是hexo-deployer-git插件的问题，所以尝试到到该github上面是看看有没有人遇到这样的问题，果然有这个<a href="https://github.com/hexojs/hexo-deployer-git/issues/13" target="_blank" rel="external">issue</a>，回答说的很清楚，我安装了github for windows但是也安装了git，但是在cmd窗口中执行git命令确提示没有该命令，然后我发现有个git cmd的工具，于是尝试在这个窗口里面去执行deploy命令，执行后还是报错了，单这次报的错和之前完全不一样了，错误如下图：<br><img src="https://linson0812.github.io/img/20160904/error2.jpg" alt="could not read username"><br>报的是could not read username for ‘<a href="https://github.com&#39;:no" target="_blank" rel="external">https://github.com&#39;:no</a> error的错误，网上直接搜索这个错误，讨论有很多啊，有的说将https的方式换成ssh的方式（试过，报的另外一个错），后来看到一个回答说将url的结构改一下，抱着试一试的态度尝试了一下，居然成功了！阿西吧，不容易啊。然后这里有个小小的思考，<a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">hexo git deployer说明</a>的repository url说的应该就是github上直接copy下来的repository url啊，具体原因有待考究。<br>这样，hexo+github搭建的博客就算起来啦，有些简陋，但也算是有个小屋啦，后面再慢慢完善吧。<br>刚开始写博客，写的不好的地方还请谅解。转载请注明原地址：谢绍宁的博客<a href="https://linson0812.github.io" target="_blank" rel="external">https://linson0812.github.io</a> 谢谢！</p>
 
       
     </div>
